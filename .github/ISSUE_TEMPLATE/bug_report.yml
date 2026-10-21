@@ -1,0 +1,29 @@
+name: Bug report
+description: Something isn't working as expected.
+title: "bug: "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: "Please don't attach real client data, addresses, secrets, or confidential proposals."
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Use fictional names and amounts.
+      placeholder: "1. Open the sample proposal…"
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: input
+    id: browser
+    attributes:
+      label: Browser and operating system
+      placeholder: "Chrome on macOS"
+    validations:
+      required: true

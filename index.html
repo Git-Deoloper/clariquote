@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <meta name="color-scheme" content="light"/>
+  <meta name="theme-color" content="#111720"/>
+  <meta name="description" content="A beautiful, private proposal studio for independent professionals. Define scope, price your work, and export client-ready documents—without an account or watermark."/>
+  <meta property="og:title" content="Clariquote — Make the work clear. Make it beautiful."/>
+  <meta property="og:description" content="Create client-ready proposals and scope-of-work documents, privately in your browser."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:image" content="assets/social-card.png"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="robots" content="index,follow"/>
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml"/>
+  <link rel="manifest" href="manifest.webmanifest"/>
+  <link rel="stylesheet" href="styles.css"/>
+  <title>Clariquote — The proposal studio for independent work</title>
+  <script src="src/app.mjs" type="module"></script>
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <header class="site-header">
+    <a href="#top" class="brand" aria-label="Clariquote home"><span class="brand-mark"><span></span><span></span><span></span></span><span>clari<span class="brand-light">quote</span><span class="brand-dot">.</span></span></a>
+    <nav class="header-nav" aria-label="Main navigation"><a href="#features">Why Clariquote</a><a href="#workspace">Workspace</a><a href="#privacy">Privacy</a></nav>
+    <a class="header-cta" href="#workspace">Open studio <span aria-hidden="true">↗</span></a>
+  </header>
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-glow" aria-hidden="true"></div>
+      <div class="hero-content">
+        <p class="eyebrow"><span class="eyebrow-spark">✳</span> THE INDEPENDENT WORK TOOLKIT · VOL. 01</p>
+        <h1 id="hero-title">Make the work <em>clear.</em><br/>Make it <span class="underlined">beautiful.</span></h1>
+        <p class="hero-description">Turn “sounds good, send me a quote” into a proposal worth saying yes to. Define your scope, price with confidence, and create a client-ready document in one thoughtful workspace.</p>
+        <div class="hero-actions"><a class="primary-button" href="#workspace">Create a proposal <span>↗</span></a><a class="outline-button" href="#workspace" id="heroDemo">Explore the example <span>↘</span></a></div>
+        <div class="hero-notes"><span><i class="green-dot"></i> No account needed</span><span>Zero watermarks</span><span>Local by design</span></div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="orb orb-one"></div><div class="orb orb-two"></div>
+        <div class="sample-sheet"><div class="sample-top"><span class="sample-logo">N<span>✳</span></span><span>PROPOSAL / 001</span></div><div class="sample-small">PREPARED FOR FABLE COFFEE</div><div class="sample-head">A fresh digital home,<br/><em>thoughtfully made.</em></div><div class="sample-line long"></div><div class="sample-line short"></div><div class="sample-row"><span>Discovery & direction</span><span>$600</span></div><div class="sample-row"><span>Website design</span><span>$1,800</span></div><div class="sample-row"><span>Build & launch</span><span>$2,200</span></div><div class="sample-total"><span>TOTAL INVESTMENT</span><strong>$4,600</strong></div><div class="sample-seal">made<br/>clear.</div></div>
+        <div class="floating-label"><span class="floating-check">✓</span><span><strong>Scope, sorted.</strong><small>Ready for the next step</small></span></div>
+      </div>
+    </section>
+    <section class="feature-strip" id="features"><div class="feature-intro"><span class="section-kicker">THE BETTER WAY TO PROPOSE</span><h2>Less admin. More <em>momentum.</em></h2></div><div class="feature-cards"><div class="feature-card"><div class="feature-symbol">01 <span>↗</span></div><h3>Price it properly.</h3><p>Build a clear investment breakdown with line items, discounts, tax, and deposits.</p></div><div class="feature-card"><div class="feature-symbol">02 <span>◈</span></div><h3>Protect your scope.</h3><p>Make deliverables, exclusions, assumptions, and next steps part of the conversation.</p></div><div class="feature-card"><div class="feature-symbol">03 <span>✦</span></div><h3>Present beautifully.</h3><p>Design a polished document, export as PDF or Markdown, and keep a portable backup.</p></div></div></section>
+    <section class="workspace-section" id="workspace" aria-labelledby="studio-title">
+      <div class="workspace-head"><div><p class="section-kicker">YOUR NEW FAVORITE WORKSPACE</p><h2 id="studio-title">The proposal <em>studio.</em></h2><p class="workspace-subhead">Every detail, considered. Every change, live.</p></div><div class="workspace-head-right"><span class="local-pill"><span class="green-dot"></span> Processing on your device</span></div></div>
+      <div class="app-shell">
+        <div class="app-toolbar"><div class="app-toolbar-left"><span class="app-appicon"><span></span><span></span><span></span></span><div><strong>Untitled proposal</strong><small id="workspaceStatus">Example project · Not saved</small></div></div><div class="app-actions"><button type="button" class="quiet-button" id="newBtn">New</button><button type="button" class="quiet-button" id="sampleBtn">Try example</button><button type="button" class="quiet-button" id="importBtn">Import JSON</button><button type="button" class="dark-button" id="printBtn">Export PDF <span>↗</span></button><input id="fileInput" type="file" accept=".json,application/json" hidden/></div></div>
+        <div class="app-body">
+          <aside class="editor-pane" aria-label="Proposal editor">
+            <div class="editor-title"><div><span class="editor-overline">YOUR DOCUMENT</span><h3>Edit your proposal</h3></div><span class="autosave-info" title="Nothing is automatically stored">● In memory only</span></div>
+            <div class="editor-tabs" role="tablist" aria-label="Editor sections"><button id="tab-details" data-tab="details" role="tab" aria-controls="panel-details" aria-selected="true">01 · Details</button><button id="tab-scope" data-tab="scope" role="tab" aria-controls="panel-scope" aria-selected="false">02 · Scope</button><button id="tab-terms" data-tab="terms" role="tab" aria-controls="panel-terms" aria-selected="false">03 · Terms</button></div>
+            <div class="editor-scroll">
+              <section id="panel-details" role="tabpanel" aria-labelledby="tab-details" class="editor-panel active">
+                <div class="editor-section-heading"><h4>Project essentials</h4><p>Give the work a name and set the context.</p></div>
+                <label>Proposal title<input data-field="title" maxlength="180" placeholder="e.g. A fresh digital home"/></label>
+                <div class="field-row"><label>Prepared by<input data-field="studio" maxlength="120" placeholder="Your studio"/></label><label>Prepared for<input data-field="client" maxlength="120" placeholder="Client or company"/></label></div>
+                <label>Project overview<textarea data-field="summary" maxlength="2500" rows="4" placeholder="What are you creating, and what will it achieve?"></textarea></label>
+                <div class="field-row"><label>Reference<input data-field="reference" maxlength="80" placeholder="PROPOSAL / 001"/></label><label>Currency<select data-field="currency" id="currencySelect"><option>USD</option><option>EUR</option><option>GBP</option><option>CAD</option><option>AUD</option><option>EGP</option><option>INR</option><option>AED</option><option>SAR</option><option>JPY</option></select></label></div>
+                <div class="field-row"><label>Prepared on<input data-field="created" type="date"/></label><label>Valid until<input data-field="validUntil" type="date"/></label></div>
+                <div class="editor-section-heading secondary"><h4>Look & feel</h4><p>Choose a document style that feels like yours.</p></div>
+                <div class="theme-picker" role="radiogroup" aria-label="Proposal theme"><button type="button" data-theme="plum" aria-pressed="true" class="theme-chip"><i class="swatch plum"></i> Plum <span>✓</span></button><button type="button" data-theme="forest" aria-pressed="false" class="theme-chip"><i class="swatch forest"></i> Forest <span>✓</span></button><button type="button" data-theme="mono" aria-pressed="false" class="theme-chip"><i class="swatch mono"></i> Mono <span>✓</span></button></div>
+              </section>
+              <section id="panel-scope" role="tabpanel" aria-labelledby="tab-scope" class="editor-panel" hidden>
+                <div class="editor-section-heading"><h4>Deliverables & fees</h4><p>Make the scope and investment unmistakable.</p></div>
+                <div id="itemEditor" class="item-editor"></div><button type="button" id="addItem" class="add-item">+ Add deliverable</button>
+                <div class="editor-section-heading secondary"><h4>Scope boundaries</h4><p>Clarity now means fewer surprises later.</p></div>
+                <label>What's included <small>One per line</small><textarea data-field="included" rows="4" maxlength="2500" placeholder="Design files&#10;Two revision rounds"></textarea></label>
+                <label>What's not included <small>One per line</small><textarea data-field="excluded" rows="4" maxlength="2500" placeholder="Hosting fees&#10;New photography"></textarea></label>
+                <label>Assumptions<textarea data-field="assumptions" rows="3" maxlength="2500" placeholder="What does the client need to provide?"></textarea></label>
+              </section>
+              <section id="panel-terms" role="tabpanel" aria-labelledby="tab-terms" class="editor-panel" hidden>
+                <div class="editor-section-heading"><h4>The working agreement</h4><p>Set expectations before the kickoff.</p></div>
+                <div class="field-row"><label>Estimated working days<input type="number" data-field="days" min="0" max="999" step="1"/></label><label>Deposit percentage<input type="number" data-field="deposit" min="0" max="100" step="1"/></label></div>
+                <div class="field-row"><label>Discount percentage<input type="number" data-field="discount" min="0" max="100" step="0.1"/></label><label>Tax percentage<input type="number" data-field="tax" min="0" max="100" step="0.1"/></label></div>
+                <label>Payment terms<textarea data-field="payment" rows="4" maxlength="2500" placeholder="When are payments due?"></textarea></label>
+                <label>Next steps<textarea data-field="next" rows="4" maxlength="2500" placeholder="How can your client move forward?"></textarea></label>
+                <p class="form-help">Clariquote prepares proposal drafts. Review local tax, legal and contractual requirements before sharing.</p>
+              </section>
+            </div>
+            <div class="editor-footer"><div class="readiness-caption"><span id="readinessLabel">Ready to refine</span><strong id="readinessCount">0/8</strong></div><div class="progress-track"><span id="readinessProgress"></span></div><button id="saveBtn" type="button" class="export-json">Download editable backup (.json) ↗</button></div>
+          </aside>
+          <section class="preview-pane" aria-label="Live proposal preview"><div class="preview-top"><div><span class="preview-dot"></span><strong>Live preview</strong><span class="preview-secondary">/ updates instantly</span></div><div class="preview-top-actions"><button type="button" id="copyBtn" title="Copy proposal as Markdown">Copy Markdown</button><button type="button" id="printBtn2">Print / PDF ↗</button></div></div>
+          <article class="paper" id="paper" data-theme="plum" aria-label="Preview of the proposed document">
+            <div class="paper-header"><span class="paper-logo" id="p-studio">Northstar Studio</span><span class="paper-reference" id="p-reference">PROPOSAL / 001</span></div>
+            <div class="paper-rule"></div><div class="paper-meta"><div><span>PREPARED FOR</span><strong id="p-client">Fable Coffee</strong></div><div><span>DATE</span><strong id="p-created">Oct 21, 2026</strong></div><div><span>VALID UNTIL</span><strong id="p-valid">Nov 20, 2026</strong></div></div>
+            <div class="paper-cover"><p class="paper-kicker">A PROPOSAL FOR WHAT'S NEXT</p><h2 id="p-title">A fresh digital home for Fable</h2><p id="p-summary">A thoughtful, accessible website that tells your story.</p></div>
+            <div class="paper-section"><div class="paper-section-head"><span>01</span><h3>The scope</h3></div><div id="p-items" class="paper-items"></div><div class="paper-pricing"><div><span>Subtotal</span><strong id="p-subtotal"></strong></div><div><span id="p-discount-label">Discount</span><strong id="p-discount"></strong></div><div><span id="p-tax-label">Tax</span><strong id="p-tax"></strong></div><div class="pricing-total"><span>Total investment</span><strong id="p-total"></strong></div></div></div>
+            <div class="paper-section"><div class="paper-section-head"><span>02</span><h3>The boundaries</h3></div><div class="scope-columns"><div><h4>Included</h4><ul id="p-included"></ul></div><div><h4>Outside scope</h4><ul id="p-excluded"></ul></div></div><p class="assumptions" id="p-assumptions"></p></div>
+            <div class="paper-section"><div class="paper-section-head"><span>03</span><h3>Timeline & terms</h3></div><div class="term-grid"><div><span>ESTIMATED DURATION</span><strong id="p-days"></strong></div><div><span>INITIAL DEPOSIT</span><strong id="p-deposit"></strong></div><div><span>REMAINING BALANCE</span><strong id="p-balance"></strong></div></div><p class="paper-terms" id="p-payment"></p></div>
+            <div class="paper-next"><span>NEXT STEPS</span><p id="p-next"></p></div><div class="paper-bottom"><span>Clarity is a great place to begin.</span><span>01 / 01</span></div>
+          </article>
+          <div class="preview-bottom"><span><span class="green-dot"></span> Designed for thoughtful client conversations</span><span>US Letter / A4-friendly</span></div>
+          </section>
+        </div>
+      </div>
+    </section>
+    <section class="bottom-section" id="privacy"><div class="bottom-visual"><span>↗</span><div class="bottom-star">✳</div></div><div><span class="section-kicker">YOUR WORK. YOUR BUSINESS.</span><h2>Good work deserves<br/><em>good boundaries.</em></h2><p>There are no accounts, ads, analytics, trackers, or server-side document storage. The proposal stays in this tab until you decide to export it. That's how it should be.</p><a href="#workspace" class="primary-button">Open the studio <span>↗</span></a></div></section>
+  </main>
+  <footer><a href="#top" class="brand footer-brand"><span class="brand-mark"><span></span><span></span><span></span></span><span>clari<span class="brand-light">quote</span><span class="brand-dot">.</span></span></a><span>Beautiful proposals. Built in the open.</span><div><a href="#features">Features</a><a href="#workspace">Studio</a><a href="#privacy">Privacy</a></div></footer>
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+</body></html>
