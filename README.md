@@ -15,6 +15,7 @@ No account. No watermark. No uploaded client documents. No external runtime depe
 - **Live proposal studio:** update project details and see the client-ready document instantly.
 - **Scope clarity:** record deliverables, inclusions, exclusions, assumptions, timelines, and next steps.
 - **Transparent pricing:** line-item fees, quantities, discounts, tax, deposits, and balances.
+- **Consistent rounding:** line amounts, discounts, tax, and deposits are rounded to currency minor units; the remaining balance is derived from the rounded deposit. JPY uses whole yen.
 - **Three document themes:** Plum, Forest, and Mono, including print-friendly layouts.
 - **Client-ready exports:** Print / Save to PDF, copy Markdown, and export editable JSON backups.
 - **Private by design:** proposal text lives in your browser tab. No storage, telemetry, external requests, or API keys.

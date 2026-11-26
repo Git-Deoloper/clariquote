@@ -41,16 +41,20 @@ export function normalizeProposal(input) {
   return safe;
 }
 export function totals(p) {
-  const subtotal = p.items.reduce((sum, item) => sum + number(item.qty,10000) * number(item.rate,1_000_000), 0);
-  const discount = subtotal * number(p.discount,100)/100;
+  // Round line amounts and adjustments in currency minor units. Derive the
+  // remaining balance from that rounded deposit so displayed amounts reconcile.
+  const scale = p.currency === 'JPY' ? 1 : 100;
+  const minor = value => Math.round((value + Number.EPSILON * Math.max(1, value)) * scale);
+  const subtotal = p.items.reduce((sum, item) => sum + minor(number(item.qty,10000) * number(item.rate,1_000_000)), 0);
+  const discount = Math.round(subtotal * number(p.discount,100)/100);
   const taxable = subtotal - discount;
-  const tax = taxable * number(p.tax,100)/100;
+  const tax = Math.round(taxable * number(p.tax,100)/100);
   const total = taxable + tax;
-  const deposit = total * number(p.deposit,100)/100;
-  return {subtotal, discount, taxable, tax, total, deposit, balance: total-deposit};
+  const deposit = Math.round(total * number(p.deposit,100)/100);
+  return Object.fromEntries(Object.entries({subtotal, discount, taxable, tax, total, deposit, balance: total-deposit}).map(([key,value])=>[key,value/scale]));
 }
 export function money(v, currency='USD') {
-  try { return new Intl.NumberFormat('en', {style:'currency',currency: CURRENCIES.includes(currency)?currency:'USD',maximumFractionDigits:2}).format(v); }
+  try { return new Intl.NumberFormat('en', {style:'currency',currency: CURRENCIES.includes(currency)?currency:'USD'}).format(v); }
   catch { return `${Number(v).toFixed(2)} ${currency}`; }
 }
 export function markdown(p) {
